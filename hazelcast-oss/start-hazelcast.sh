@@ -31,8 +31,6 @@ else
   export LOGGING_PATTERN="%d [%highlight{\${LOG_LEVEL_PATTERN:-%5p}}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=magenta}] [%style{%t{1.}}{cyan}] [%style{%c{1.}}{blue}]: %m%n"
 fi
 
-chmod 400 /opt/hazelcast/jmxremote.password
-
 echo "########################################"
 echo "# JAVA_OPTS=${JAVA_OPTS}"
 echo "# CLASSPATH=${CLASSPATH}"
