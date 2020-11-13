@@ -36,7 +36,6 @@ COPY *.sh *.yaml *.jar *.properties ${HZ_HOME}/
 
 # Install
 RUN echo "Installing new APK packages" \
-<<<<<<< HEAD
     && echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >>  /etc/apk/repositories \
     && echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
     && apk add --no-cache openjdk15-jre bash curl procps nss \
