@@ -1,9 +1,9 @@
-FROM alpine:3.11
+FROM alpine:3.12.1
 
 # Versions of Hazelcast and Hazelcast plugins
-ARG HZ_VERSION=4.0.3
+ARG HZ_VERSION=4.1
 ARG CACHE_API_VERSION=1.1.1
-ARG JMX_PROMETHEUS_AGENT_VERSION=0.11.0
+ARG JMX_PROMETHEUS_AGENT_VERSION=0.14.0
 ARG LOG4J2_VERSION=2.13.3
 
 # Build constants
@@ -36,9 +36,13 @@ COPY *.sh *.yaml *.jar *.properties ${HZ_HOME}/
 
 # Install
 RUN echo "Installing new APK packages" \
+<<<<<<< HEAD
     && echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" >>  /etc/apk/repositories \
     && echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
     && apk add --no-cache openjdk15-jre bash curl procps nss \
+=======
+    && apk add --no-cache openjdk11-jre bash curl \
+>>>>>>> upstream/master
     && echo "Downloading Hazelcast and related JARs" \
     && mkdir "${HZ_HOME}/lib" \
     && cd "${HZ_HOME}/lib" \
