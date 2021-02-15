@@ -49,7 +49,6 @@ RUN echo "Installing new APK packages" \
     && echo "Granting read permission to ${HZ_HOME}" \
     && chmod -R +r ${HZ_HOME} \
     && echo "Cleaning APK packages" \
-    && rm -rf /var/cache/apk/* 
     && apk del perl-xml-xpath curl zip \
     && rm -rf /var/cache/apk/* ${HZ_HOME}/get-hz-all-url.sh
 
